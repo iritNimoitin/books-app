@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  padding: 30px;
+  margin: 0;
+}
+
+.header {
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.books-wrapper {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+  color: #b00020;
+  background: #ffe5e5;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filter-buttons button {
+  flex: 1;
+  padding: 8px 12px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #f0f0f0;
+}
+
+.filter-buttons button.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.books-list {
+  margin-bottom: 20px;
+}
+
+.book-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.add-button {
+  padding: 10px 15px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: #218838;
+}
+
+.confirmation-message {
+  background: #e6ffe6;
+  color: #155724;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #b2dfb2;
+  border-radius: 6px;
+  font-weight: bold;
+}

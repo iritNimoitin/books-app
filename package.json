@@ -1,0 +1,37 @@
+{
+  "name": "reaktivate-tdd-challenge-1-sample-begin",
+  "version": "1.0.0",
+  "description": "How we create a fast-test architecture from scratch.",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "mobx": "6.3.10",
+    "mobx-react": "7.2.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-scripts": "3.0.1"
+  },
+  "jest": {
+    "setupFiles": ["./jest.setup.js"]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "jest-fetch-mock": "^3.0.3",
+    "typescript": "3.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
