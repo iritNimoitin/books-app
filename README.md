@@ -15,6 +15,20 @@ This project is a simple React-based Book Management App built for a technical h
 
 ---
 
+## Prerequisites
+
+This project requires Node.js version 16.x in order to run properly.
+Versions above 16 (like Node 18 or 20) might cause conflicts with react-scripts and jest.
+
+```bash
+nvm use 16
+```
+
+If you don’t have it installed:
+```bash
+nvm install 16
+```
+
 ## Tech Stack
 
 - **React 16.8**

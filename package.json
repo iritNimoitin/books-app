@@ -12,13 +12,11 @@
     "react-scripts": "3.0.1"
   },
   "jest": {
-    "setupFiles": ["./jest.setup.js"]
+    "setupFiles": [
+      "./jest.setup.js"
+    ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.27.2",
-    "@babel/preset-react": "^7.27.1",
-    "babel-jest": "^27.5.1",
-    "jest": "^27.5.1",
     "jest-fetch-mock": "^3.0.3",
     "typescript": "3.3.3"
   },

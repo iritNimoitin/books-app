@@ -23,7 +23,7 @@ class BooksController {
 
   async loadBooks() {
     try {
-      const books = await this.repository.getBooks(this.isPrivate);
+      const books = (await this.repository.getBooks(this.isPrivate)) || [];
       runInAction(() => {
         const validBooks = books.filter((b) => b && b.name && b.author);
         const privateBooks = validBooks.filter((b) => b.private);

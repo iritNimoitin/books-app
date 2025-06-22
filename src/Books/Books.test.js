@@ -14,17 +14,27 @@ const mockBooks = [
 
 describe("BooksController", () => {
   beforeEach(() => {
-    global.localStorage = {
-      getItem: jest.fn(() => "false"),
-      setItem: jest.fn(),
-    };
+    const localStorageMock = (() => {
+      let store = {};
+      return {
+        getItem: jest.fn((key) => store[key]),
+        setItem: jest.fn((key, value) => {
+          store[key] = value;
+        })
+      };
+    })();
+
+    Object.defineProperty(window, "localStorage", {
+      value: localStorageMock,
+      writable: true,
+    });
+
     fetch.resetMocks && fetch.resetMocks();
     jest.clearAllMocks();
   });
 
   test("loadBooks filters only valid and non-private books when isPrivate = false", async () => {
     booksRepository.getBooks.mockResolvedValueOnce(mockBooks)
-      .mockResolvedValueOnce(mockBooks);
 
     const controller = new BooksController(booksRepository);
     controller.setIsPrivate(false);
@@ -37,7 +47,6 @@ describe("BooksController", () => {
 
   test("loadBooks loads all valid private books when isPrivate = true", async () => {
     booksRepository.getBooks
-      .mockResolvedValueOnce([])
       .mockResolvedValueOnce(mockBooks);
 
     const controller = new BooksController(booksRepository);
@@ -59,7 +68,6 @@ describe("BooksController", () => {
     
     booksRepository.addBook.mockResolvedValueOnce(true);
     booksRepository.getBooks.mockResolvedValueOnce([])
-      .mockResolvedValueOnce([newBook])
       .mockResolvedValue([newBook]);
 
     const controller = new BooksController(booksRepository);
@@ -94,7 +102,6 @@ describe("BooksController", () => {
 
   test("setIsPrivate updates localStorage and reloads books", async () => {
     booksRepository.getBooks.mockResolvedValueOnce(mockBooks)
-      .mockResolvedValueOnce(mockBooks);
 
     const controller = new BooksController(booksRepository);
     controller.setIsPrivate(true);
